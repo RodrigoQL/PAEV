@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1038548261172776}
+  m_IsPrefabParent: 1
+--- !u!1 &1038548261172776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4876005373398930}
+  - component: {fileID: 114465306475643618}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4876005373398930
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038548261172776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.95, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114465306475643618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038548261172776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 491a8b86900ce4c4c88e3778e323de89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUp: {fileID: 1076334771197776, guid: 45dd0e9372e4cfb4bb15fae2f9914dd6, type: 2}
+  V3: {fileID: 1682456490931498, guid: 38fa5512a1eed0c46a722298c958e0b6, type: 2}
+  VVV: {fileID: 1375785082958332, guid: b8f3cd6d6d5ff11419397140f8f9192f, type: 2}
+  LittleAsteroid: {fileID: 1593379407394190, guid: ceeec9a41e5587245a3c68af221b3414,
+    type: 2}
+  MediumAsteroid: {fileID: 1768087240882608, guid: 35a7f0af129f78f4f914996e271aaa4b,
+    type: 2}
+  BigAsteroid: {fileID: 1733120617383012, guid: 89d26d6d9797408408b8faf913fddbea,
+    type: 2}
+  SmallRush: {fileID: 1119912345798730, guid: e9e7c10ff807f0441b48459ec6393d0d, type: 2}
+  Boss: {fileID: 1123125631756046, guid: 9699e86bb7f155d46b28462911ec352a, type: 2}
+  difficulty: 1

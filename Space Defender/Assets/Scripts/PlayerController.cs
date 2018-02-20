@@ -106,11 +106,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator Improvement()
-    {
+    IEnumerator Improvement() {
         int op = Random.Range(1, 4);
-        switch (op)
-        {
+        switch (op) {
             case 1:
                 PowerUp.color = new Color(0.9f, 0.9f, 0.1f);
                 PowerUp.text = "Fire Rate Improved";
@@ -132,25 +130,20 @@ public class PlayerController : MonoBehaviour
         PowerUp.text = string.Empty;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("PowerUp"))
-        {
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("PowerUp")) {
             StartCoroutine(Improvement());
         }
-        else
-        {
+        else {
             StartCoroutine(EndGame());
         }
     }
-    IEnumerator EndGame()
-    {
+    IEnumerator EndGame() {
         Destroy(Instantiate(Explosion, this.transform.position, Quaternion.identity), 2);
         this.transform.position = new Vector3(0, -20);
 
         yield return new WaitForSeconds(3);
 
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
-
     }
 }

@@ -13,22 +13,18 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
         GetComponent<Rigidbody2D>().velocity = Velocity;
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         Life--;
-        if(collision.gameObject.CompareTag("Neutral"))
-        {
+        if(collision.gameObject.CompareTag("Neutral")) {
             if(!isBoss) Life = 0;
         }
-        if(Life<=0)
-        {
+        if(Life<=0) {
             Vector3 pos = this.transform.position;
             pos.z -= 1;
             GameObject exp = Instantiate(Explosion, pos, Quaternion.identity);
             Destroy(exp, 1);
 
-            if (isBoss)
-            {
+            if (isBoss) {
                 pos += new Vector3(1, 1, 0);
                 GameObject exp2 = Instantiate(Explosion, pos, Quaternion.identity);
                 Destroy(exp2, 1);
@@ -40,16 +36,12 @@ public class EnemyScript : MonoBehaviour {
                 Destroy(exp4, 1);
                 StartCoroutine(Win());
             }
-            else
-            {
+            else {
                 Destroy(gameObject,0.1f);
-            }
-
-            
+            }   
         }
     }
-    IEnumerator Win()
-    {
+    IEnumerator Win() {
         yield return new WaitForSeconds(1);
         this.transform.position = new Vector3(0, 50, 0);
         yield return new WaitForSeconds(2);

@@ -18,13 +18,11 @@ public class PowerUpScript : MonoBehaviour {
 	void FixedUpdate () {
         this.transform.Rotate(rotation);
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         audioSource.Play();
         StartCoroutine(Finish());
     }
-    IEnumerator Finish()
-    {
+    IEnumerator Finish() {
         this.transform.position = new Vector3(0,50,0);
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);

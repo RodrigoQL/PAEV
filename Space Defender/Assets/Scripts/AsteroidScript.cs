@@ -9,8 +9,7 @@ public class AsteroidScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
-        if (!hasRotation)
-        {
+        if (!hasRotation) {
             rb.velocity = new Vector2(Random.Range(-1f, 1f), Random.Range(-0.5f, -2.5f));
             rb.AddTorque(Random.Range(-1000f, 1000f));
         }
@@ -19,11 +18,9 @@ public class AsteroidScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(hasRotation)
-        {
+		if(hasRotation) {
             Vector3 pos = this.transform.position;
-            if(pos.y<1.5)
-            {
+            if(pos.y<1.5) {
                 pos.y = 1;
                 this.transform.position = pos;
             }

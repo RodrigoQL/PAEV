@@ -5,8 +5,7 @@ using UnityEngine;
 public class DeathWallScript : MonoBehaviour {
 
     // Use this for initialization
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         Destroy(collision.gameObject);
     }
 }

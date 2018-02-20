@@ -27,92 +27,69 @@ public class Spawner : MonoBehaviour {
         InvokeRepeating("SpawnAsteroid2", 104, 10 - difficulty);
         InvokeRepeating("SpawnBoss", 190, 0);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
-    void SpawnPowerUp()
-    {
+    void SpawnPowerUp() {
         Vector3 pos = new Vector3(Random.Range(-5f,5f), 10, 1);
         Instantiate(PowerUp, pos, Quaternion.identity);
     }
-    void SpawnV3()
-    {
+    void SpawnV3() {
         Vector3 pos = new Vector3(Random.Range(-4f, 4f), 10, 1);
         Destroy(Instantiate(V3, pos, Quaternion.identity),20);
     }
-    void SpawnBoss()
-    {
+    void SpawnBoss() {
         CancelInvoke("SpawnAsteroid");
         CancelInvoke("SpawnAsteroid2");
         CancelInvoke("SpawnVVV");
         Vector3 pos = new Vector3(0, 15, 1);
         Instantiate(Boss, pos, Quaternion.identity);
     }
-    void SpawnVVV()
-    {
+    void SpawnVVV() {
         if (Random.Range(0f, 1f) > 0.4f)
         {
             Vector3 pos = new Vector3(0, 10, 1);
             Destroy(Instantiate(VVV, pos, Quaternion.identity), 20);
         }
     }
-    void SpawnVVV2()
-    {
-        if (Random.Range(0f, 1f) > 0.4f)
-        {
+    void SpawnVVV2() {
+        if (Random.Range(0f, 1f) > 0.4f) {
             Vector3 pos = new Vector3(0, 10, 1);
             Destroy(Instantiate(VVV, pos, Quaternion.identity), 20);
         }
     }
-    void SpawnRush()
-    {
+    void SpawnRush() {
         Vector3 pos = new Vector3(Random.Range(-4f, 4f), 10, 1);
         Destroy(Instantiate(SmallRush, pos, Quaternion.identity), 20);
     }
-    void SpawnRush2()
-    {
+    void SpawnRush2() {
         Vector3 pos = new Vector3(Random.Range(-5f, 5f), 10, 1);
         Destroy(Instantiate(SmallRush, pos, Quaternion.identity), 20);
     }
-    void SpawnAsteroid()
-    {
+    void SpawnAsteroid() {
         float r = Random.Range(0f, 1f);
-        if(r>0.5)
-        {
+        if(r > 0.5) {
             Vector3 pos = new Vector3(Random.Range(-6f, 6f), 11, 0);
-            if(r<0.75)
-            {
+            if(r < 0.75) {
                 Instantiate(LittleAsteroid, pos, Quaternion.identity);
             }
-            else if(r < 0.9)
-            {
+            else if(r < 0.9) {
                 Instantiate(MediumAsteroid, pos, Quaternion.identity);
             }
-            else
-            {
+            else {
                 Instantiate(BigAsteroid, pos, Quaternion.identity);
             }
         }
     }
-    void SpawnAsteroid2()
-    {
+    void SpawnAsteroid2() {
         float r = Random.Range(0f, 1f);
-        if (r > 0.25)
-        {
+        if (r > 0.25) {
             Vector3 pos = new Vector3(Random.Range(-6f, 6f), 11, 0);
-            if (r < 0.6)
-            {
+            if (r < 0.6) {
                 Instantiate(LittleAsteroid, pos, Quaternion.identity);
             }
-            else if (r < 0.85)
-            {
+            else if (r < 0.85) {
                 Instantiate(MediumAsteroid, pos, Quaternion.identity);
             }
-            else
-            {
+            else {
                 Instantiate(BigAsteroid, pos, Quaternion.identity);
             }
         }

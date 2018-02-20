@@ -19,7 +19,6 @@ public class ScrollUV : MonoBehaviour {
         else if (transform.rotation.eulerAngles.z == 180) direction = Vector2.down;
         else if (transform.rotation.eulerAngles.z == 270) direction = Vector2.left;
         else direction = Vector2.up;
-
     }
 	
 	void Update () {

@@ -5,24 +5,19 @@ using UnityEngine;
 public class SceneManager : MonoBehaviour {
 
     private AudioSource audioSource;
-    private void Start()
-    {
+    private void Start(){
         audioSource = GetComponent<AudioSource>();
-        
     }
-    // Use this for initialization
-    public void LoadLevel(string levelName)
-    {
+
+    public void LoadLevel(string levelName) {
         audioSource.Play();
         StartCoroutine(WaitLoad(levelName));
     }
-    public void Salir()
-    {
+    public void Salir() {
         print("Salir");
         Application.Quit();
     }
-    IEnumerator WaitLoad(string levelName)
-    {
+    IEnumerator WaitLoad(string levelName) {
         yield return new WaitForSeconds(0.2f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
     }

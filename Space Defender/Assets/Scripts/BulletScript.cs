@@ -11,13 +11,11 @@ public class BulletScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(this.transform.position.y > 5.5f)
-        {
+		if(this.transform.position.y > 5.5f) {
             Destroy(gameObject);
         }
 	}
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D(Collision2D collision) {
         GameObject exp = Instantiate(Explosion, collision.gameObject.transform);
         exp.transform.position = this.transform.position;
         exp.GetComponent<Animator>().speed = 3;

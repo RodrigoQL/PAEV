@@ -5,33 +5,42 @@ using UnityEngine;
 public abstract class Crashable : MonoBehaviour {
 
     public CrashableType CrashableType;
-    public int Health;
-    public int damageModifier;
-    public float damageMultiplier;
+    public int TotalHealth;
+    public int DamageModifier = 0;
+    public float DamageMultiplier = 1;
+    public GameObject Explosion;
+
+    protected int currentHealth;
 
     public int DealDamage() {
         float damageReturn = 0;
         switch (CrashableType) {
             case CrashableType.Standard:
-                damageReturn = Health / 2;
+                damageReturn = TotalHealth / 2;
                 break;
             case CrashableType.Explosive:
-                damageReturn = Health * 2;
+                damageReturn = TotalHealth * 2;
                 break;
             case CrashableType.Penetrating:
-                damageReturn = Health;
+                damageReturn = TotalHealth;
                 break;
             case CrashableType.Ship:
-                damageReturn = Health;
+                damageReturn = TotalHealth;
                 break;
         }
-        damageReturn = ( damageReturn * damageMultiplier ) + damageModifier;
+        damageReturn = ( damageReturn * DamageMultiplier ) + DamageModifier;
         return ( int )damageReturn;
     }
 
     protected void ReceiveDamage(Crashable crashable) {
-        Health -= crashable.DealDamage();
-        if (Health<=0) {
+        if (CrashableType == CrashableType.Explosive) {
+            currentHealth = 0;
+        }
+        else {
+            currentHealth -= crashable.DealDamage();
+        }
+
+        if (currentHealth <= 0) {
             DestroySelf();
         }
     }

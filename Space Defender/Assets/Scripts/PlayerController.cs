@@ -87,9 +87,6 @@ public class PlayerController : MonoBehaviour
                 aux.z = 1;
                 aux.x -= 0.8f;
                 float division = 1.6f / ((float)cannons + 1f);
-
-                
-
                 for(int i = 0; i<cannons; i++)
                 {
                     audioSource.Play();
@@ -117,12 +114,12 @@ public class PlayerController : MonoBehaviour
             case 1:
                 PowerUp.color = new Color(0.9f, 0.9f, 0.1f);
                 PowerUp.text = "Fire Rate Improved";
-                fireRate++;
+                fireRate+=1;
                 break;
             case 2:
                 PowerUp.color = new Color(1f, 0.3f, 0.3f);
                 PowerUp.text = "Cannon Added";
-                cannons++;
+                cannons+=1;
                 break;
             case 3:
                 PowerUp.color = new Color(0.3f, 0.3f, 1f);

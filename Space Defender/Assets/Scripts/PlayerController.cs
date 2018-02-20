@@ -21,10 +21,11 @@ public class PlayerController : MonoBehaviour
     private float speed = 2;
     private float fireRate = 1;
     private int cannons = 1;
-    private int health = 1;
+    private int health = 2;
     public Text CannonsText;
     public Text FireRateText;
     public Text SpeedText;
+    public Text HealthText;
 
     public GameObject Explosion;
 
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         CannonsText.text = "Cannons:  " + cannons;
         SpeedText.text = "Speed:  " + speed;
         FireRateText.text = "Fire Rate:  " + fireRate;
+        HealthText.text = "Health: " + health;
     }
     void Movement()
     {
@@ -107,7 +109,7 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator Improvement() {
-        int op = Random.Range(1, 4);
+        int op = Random.Range(1, 5);
         switch (op) {
             case 1:
                 PowerUp.color = new Color(0.9f, 0.9f, 0.1f);
@@ -124,6 +126,11 @@ public class PlayerController : MonoBehaviour
                 PowerUp.text = "Speed Improved";
                 speed+=1f;
                 break;
+            case 4:
+                PowerUp.color = new Color(0.2f, 1f, 0.2f);
+                PowerUp.text = "Health Augment";
+                health += 1;
+                break;
         }
         UpdateStats();
         yield return new WaitForSeconds(1.5f);
@@ -135,7 +142,11 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Improvement());
         }
         else {
-            StartCoroutine(EndGame());
+            health--;
+            UpdateStats();
+            if (health == 0) {
+                StartCoroutine(EndGame());
+            }
         }
     }
     IEnumerator EndGame() {

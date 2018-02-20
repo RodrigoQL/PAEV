@@ -196,19 +196,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
         type: 2}
-      propertyPath: CanvasRect
-      value: 
-      objectReference: {fileID: 1614231644}
-    - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
-        type: 2}
       propertyPath: PowerUp
       value: 
       objectReference: {fileID: 1614231645}
     - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
         type: 2}
-      propertyPath: SpeedText
+      propertyPath: CanvasRect
       value: 
-      objectReference: {fileID: 1614231641}
+      objectReference: {fileID: 1614231644}
+    - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
+        type: 2}
+      propertyPath: CannonsText
+      value: 
+      objectReference: {fileID: 1614231643}
     - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
         type: 2}
       propertyPath: FireRateText
@@ -216,9 +216,14 @@ Prefab:
       objectReference: {fileID: 1614231642}
     - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
         type: 2}
-      propertyPath: CannonsText
+      propertyPath: SpeedText
       value: 
-      objectReference: {fileID: 1614231643}
+      objectReference: {fileID: 1614231641}
+    - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
+        type: 2}
+      propertyPath: HealthText
+      value: 
+      objectReference: {fileID: 1614231646}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94f705bfb12597740adf3a30f8644c44, type: 2}
   m_IsPrefabParent: 0
@@ -390,6 +395,12 @@ RectTransform:
 --- !u!114 &1614231645 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114258955944026752, guid: 36f83dda33af0354e9fdf496732c6696,
+    type: 2}
+  m_PrefabInternal: {fileID: 1614231640}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1614231646 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114678196313941262, guid: 36f83dda33af0354e9fdf496732c6696,
     type: 2}
   m_PrefabInternal: {fileID: 1614231640}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}

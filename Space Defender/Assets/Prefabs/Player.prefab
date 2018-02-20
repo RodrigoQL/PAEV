@@ -210,6 +210,7 @@ MonoBehaviour:
   CannonsText: {fileID: 0}
   FireRateText: {fileID: 0}
   SpeedText: {fileID: 0}
+  HealthText: {fileID: 0}
   Explosion: {fileID: 1452553829244094, guid: b619550caca45744f9694ec5eec5dc68, type: 2}
 --- !u!212 &212800838734729614
 SpriteRenderer:

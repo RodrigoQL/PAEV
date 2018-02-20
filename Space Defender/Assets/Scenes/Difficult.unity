@@ -242,6 +242,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 325268800}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &325268806 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114678196313941262, guid: 36f83dda33af0354e9fdf496732c6696,
+    type: 2}
+  m_PrefabInternal: {fileID: 325268800}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &669290879
 Prefab:
   m_ObjectHideFlags: 0
@@ -395,6 +401,11 @@ Prefab:
       propertyPath: CannonsText
       value: 
       objectReference: {fileID: 325268802}
+    - target: {fileID: 114010746804913096, guid: 94f705bfb12597740adf3a30f8644c44,
+        type: 2}
+      propertyPath: HealthText
+      value: 
+      objectReference: {fileID: 325268806}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94f705bfb12597740adf3a30f8644c44, type: 2}
   m_IsPrefabParent: 0

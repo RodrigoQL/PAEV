@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a846f454aff3214489073386711333d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: -1}
+  Torque: 2
 --- !u!212 &212841750061858608
 SpriteRenderer:
   m_ObjectHideFlags: 1

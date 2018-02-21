@@ -283,12 +283,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AsteroidScript.cs" />
-    <Compile Include="Assets\Scripts\CrashableObjects\BulletScript.cs" />
-    <Compile Include="Assets\Scripts\CrashableObjects\Crashable.cs" />
-    <Compile Include="Assets\Scripts\CrashableObjects\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\DeathWallScript.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\Crashable.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\Moving.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\PowerUpScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\PowerUpScript.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\ScrollUV.cs" />
     <Compile Include="Assets\Scripts\SoundControl.cs" />

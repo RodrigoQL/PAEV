@@ -8,7 +8,7 @@ public abstract class Moving : MonoBehaviour {
     public int Torque = 0;
 	void Start () {
         GetComponent<Rigidbody2D>().velocity = Velocity;
-        GetComponent<Rigidbody2D>().AddTorque( Torque );
+        GetComponent<Rigidbody2D>().angularVelocity = Torque;
         Initialize();
     }
     protected abstract void Initialize();

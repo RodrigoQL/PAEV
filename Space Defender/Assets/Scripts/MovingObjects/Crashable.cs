@@ -14,6 +14,11 @@ public abstract class Crashable : Moving {
 
     protected override void Initialize() {
         currentHealth = TotalHealth;
+        InitializeCrashable();
+    }
+
+    protected virtual void InitializeCrashable() {
+        return;
     }
 
     public int DealDamage() {
@@ -30,6 +35,9 @@ public abstract class Crashable : Moving {
                 break;
             case CrashableType.Ship:
                 damageReturn = TotalHealth;
+                break;
+            case CrashableType.Asteroid:
+                damageReturn = TotalHealth / 50;
                 break;
         }
         damageReturn = ( damageReturn * DamageMultiplier ) + DamageModifier;
@@ -53,5 +61,5 @@ public abstract class Crashable : Moving {
 }
 
 public enum CrashableType{
-    Ship, Explosive, Penetrating, Standard
+    Ship, Explosive, Penetrating, Standard, Asteroid
 }

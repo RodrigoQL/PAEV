@@ -309,8 +309,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: -2}
-  Life: 2
+  Torque: 0
+  CrashableType: 0
+  TotalHealth: 5
+  DamageModifier: 0
+  DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
+  isBoss: 0
 --- !u!114 &114258712105512532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -323,8 +328,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: -2}
-  Life: 2
+  Torque: 0
+  CrashableType: 0
+  TotalHealth: 5
+  DamageModifier: 0
+  DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
+  isBoss: 0
 --- !u!114 &114601848416004436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -337,8 +347,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: -2}
-  Life: 2
+  Torque: 0
+  CrashableType: 0
+  TotalHealth: 5
+  DamageModifier: 0
+  DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
+  isBoss: 0
 --- !u!212 &212428395949258532
 SpriteRenderer:
   m_ObjectHideFlags: 1

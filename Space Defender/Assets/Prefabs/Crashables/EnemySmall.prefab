@@ -217,8 +217,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: -5}
-  Life: 1
+  Torque: 0
+  CrashableType: 2
+  TotalHealth: 3
+  DamageModifier: 0
+  DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
+  isBoss: 0
 --- !u!212 &212001737891569318
 SpriteRenderer:
   m_ObjectHideFlags: 1

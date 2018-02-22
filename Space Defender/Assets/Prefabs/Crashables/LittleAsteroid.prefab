@@ -167,6 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bb4f7be15d3fa41a59319c42bc46fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: -0.5}
+  Torque: 0
+  CrashableType: 4
+  TotalHealth: 100
+  DamageModifier: 0
+  DamageMultiplier: 1
+  Explosion: {fileID: 0}
 --- !u!212 &212836379065289918
 SpriteRenderer:
   m_ObjectHideFlags: 1

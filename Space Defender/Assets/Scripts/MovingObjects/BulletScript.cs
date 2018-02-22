@@ -12,7 +12,9 @@ public class BulletScript : Crashable {
     private void OnCollisionEnter2D(Collision2D collision) {
 
         Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
-        ReceiveDamage( impactObject );
+        if (impactObject != null) {
+            ReceiveDamage( impactObject );
+        }
         
     }
 

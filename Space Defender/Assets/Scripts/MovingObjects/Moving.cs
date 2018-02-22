@@ -5,10 +5,13 @@ using UnityEngine;
 public abstract class Moving : MonoBehaviour {
 
     public Vector2 Velocity;
-    public int Torque = 0;
+    public float Torque = 0;
+    protected Rigidbody2D rBody;
+
 	void Start () {
-        GetComponent<Rigidbody2D>().velocity = Velocity;
-        GetComponent<Rigidbody2D>().angularVelocity = Torque;
+        rBody = GetComponent<Rigidbody2D>();
+        rBody.velocity = Velocity;
+        rBody.angularVelocity = Torque;
         Initialize();
     }
     protected abstract void Initialize();

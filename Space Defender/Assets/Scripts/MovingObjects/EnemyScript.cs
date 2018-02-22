@@ -8,14 +8,13 @@ public class EnemyScript : Crashable {
     public bool isBoss;
     
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag( "Neutral" ) || collision.gameObject.CompareTag( "Player" )) {
-            DestroySelf();
-        }
-        else if(collision.gameObject.CompareTag( "GoodBullet" )) {
-            Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
+        Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
+        if (impactObject != null) {
             ReceiveDamage( impactObject );
         }
-
+        if (collision.gameObject.CompareTag( "Player" )) {
+            DestroySelf();
+        }
     }
     IEnumerator Win() {
         yield return new WaitForSeconds(1);

@@ -8,11 +8,9 @@ public abstract class Moving : MonoBehaviour {
     public float Torque = 0;
     protected Rigidbody2D rBody;
 
-	void Start () {
+	protected virtual void Start () {
         rBody = GetComponent<Rigidbody2D>();
         rBody.velocity = Velocity;
         rBody.angularVelocity = Torque;
-        Initialize();
     }
-    protected abstract void Initialize();
 }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class PowerUpScript : Moving {
 
     private AudioSource audioSource;
-    protected override void Initialize() {
+
+    protected override void Start() {
+        base.Start();
         audioSource = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter2D(Collision2D collision) {

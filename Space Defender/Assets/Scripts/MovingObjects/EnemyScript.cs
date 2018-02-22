@@ -6,16 +6,6 @@ using UnityEngine.SceneManagement;
 public class EnemyScript : Crashable {
     
     public bool isBoss;
-    
-    private void OnCollisionEnter2D(Collision2D collision) {
-        Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
-        if (impactObject != null) {
-            ReceiveDamage( impactObject );
-        }
-        if (collision.gameObject.CompareTag( "Player" )) {
-            DestroySelf();
-        }
-    }
     IEnumerator Win() {
         yield return new WaitForSeconds(1);
         this.transform.position = new Vector3(0, 50, 0);

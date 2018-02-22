@@ -12,15 +12,17 @@ public abstract class Crashable : Moving {
 
     protected int currentHealth;
 
-    protected override void Initialize() {
+    protected override void Start() {
+        base.Start();
         currentHealth = TotalHealth;
-        InitializeCrashable();
     }
 
-    protected virtual void InitializeCrashable() {
-        return;
+    protected virtual void OnCollisionEnter2D(Collision2D collision) {
+        Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
+        if (impactObject != null) {
+            ReceiveDamage( impactObject );
+        }
     }
-
     public int DealDamage() {
         float damageReturn = 0;
         switch (CrashableType) {

@@ -9,14 +9,6 @@ public class BulletScript : Crashable {
             Destroy(gameObject);
         }
 	}
-    private void OnCollisionEnter2D(Collision2D collision) {
-
-        Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
-        if (impactObject != null) {
-            ReceiveDamage( impactObject );
-        }
-        
-    }
 
     protected override void DestroySelf() {
         GameObject exp = Instantiate( Explosion, this.transform.position, Quaternion.identity );

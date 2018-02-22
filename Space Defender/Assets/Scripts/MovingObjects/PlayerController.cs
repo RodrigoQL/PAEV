@@ -25,8 +25,10 @@ public class PlayerController : Crashable {
     public Text HealthText;
 
     private AudioSource audioSource;
-    
-    protected override void InitializeCrashable() {
+
+    protected override void Start() {
+        base.Start();
+
         audioSource = GetComponent<AudioSource>();
         animator.speed = 2;
         UpdateStats();
@@ -118,17 +120,11 @@ public class PlayerController : Crashable {
         yield return new WaitForSeconds( 1.5f );
         PowerUp.text = string.Empty;
     }
-
-    private void OnCollisionEnter2D(Collision2D collision) {
+    protected override void OnCollisionEnter2D(Collision2D collision) {
+        base.OnCollisionEnter2D( collision );
+        UpdateStats();
         if (collision.gameObject.CompareTag( "PowerUp" )) {
             StartCoroutine( Improvement() );
-        }
-        else {
-            Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
-            if (impactObject != null) {
-                ReceiveDamage( impactObject );
-            }
-            UpdateStats();
         }
     }
     IEnumerator EndGame() {

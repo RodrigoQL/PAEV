@@ -288,8 +288,8 @@
     <Compile Include="Assets\Scripts\MovingObjects\Crashable.cs" />
     <Compile Include="Assets\Scripts\MovingObjects\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\MovingObjects\Moving.cs" />
+    <Compile Include="Assets\Scripts\MovingObjects\PlayerController.cs" />
     <Compile Include="Assets\Scripts\MovingObjects\PowerUpScript.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\ScrollUV.cs" />
     <Compile Include="Assets\Scripts\SoundControl.cs" />

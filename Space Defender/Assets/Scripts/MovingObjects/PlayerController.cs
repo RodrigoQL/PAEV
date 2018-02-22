@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : Crashable {
 
     public Animator animator;
 
-    private Vector2 velocity;
-    private Rigidbody2D rb;
+    private Vector2 velAux;
 
     private double shootTimer = 0;
     public GameObject bullet;
@@ -20,54 +19,49 @@ public class PlayerController : MonoBehaviour {
     private float speed = 2;
     private float fireRate = 1;
     private int cannons = 1;
-    private int health = 2;
     public Text CannonsText;
     public Text FireRateText;
     public Text SpeedText;
     public Text HealthText;
 
-    public GameObject Explosion;
-
     private AudioSource audioSource;
-
-    // Use this for initialization
-    void Start() {
-        rb = GetComponent<Rigidbody2D>();
+    
+    protected override void InitializeCrashable() {
         audioSource = GetComponent<AudioSource>();
         animator.speed = 2;
         UpdateStats();
     }
-
-    // Update is called once per frame
-    void UpdateStats() {
+    private void UpdateStats() {
         CannonsText.text = "Cannons:  " + cannons;
         SpeedText.text = "Speed:  " + speed;
         FireRateText.text = "Fire Rate:  " + fireRate;
-        HealthText.text = "Health: " + health;
+        HealthText.text = "Health: " + currentHealth;
     }
-    void Movement() {
-
+    private void Movement() {
+        velAux = rBody.velocity;
         if (Input.GetKey( KeyCode.LeftArrow )) {
-            velocity.x -= speed * 0.1f;
+            velAux.x -= speed * 0.1f;
         }
         else if (Input.GetKey( KeyCode.RightArrow )) {
-            velocity.x += speed * 0.1f;
+            velAux.x += speed * 0.1f;
         }
-        velocity.x = Mathf.Clamp( velocity.x, -speed, speed );
-        rb.velocity = velocity;
+        velAux.x = Mathf.Clamp( velAux.x, -speed, speed );
+        rBody.velocity = velAux;
 
         Vector3 vec = this.transform.position;
         vec = Camera.main.WorldToViewportPoint( vec );
         vec.x = Mathf.Clamp( vec.x, 0.1f, 0.9f );
         this.transform.position = Camera.main.ViewportToWorldPoint( vec );
     }
-    void Update() {
+    private void PowerUpMessage() {
         Vector2 ViewportPosition = cam.WorldToViewportPoint( this.transform.position + new Vector3( 0, -1, 0 ) );
         Vector2 WorldObject_ScreenPosition = new Vector2(
         ( ( ViewportPosition.x * CanvasRect.sizeDelta.x ) - ( CanvasRect.sizeDelta.x * 0.5f ) ),
         ( ( ViewportPosition.y * CanvasRect.sizeDelta.y ) - ( CanvasRect.sizeDelta.y * 0.5f ) ) );
         PowerUp.GetComponent<RectTransform>().anchoredPosition = WorldObject_ScreenPosition;
-
+    }
+    void Update() {
+        PowerUpMessage();
         Movement();
         Shoot();
     }
@@ -116,7 +110,8 @@ public class PlayerController : MonoBehaviour {
             case 4:
                 PowerUp.color = new Color( 0.2f, 1f, 0.2f );
                 PowerUp.text = "Health Augment";
-                health += 1;
+                currentHealth += 5;
+                TotalHealth += 5;
                 break;
         }
         UpdateStats();
@@ -129,11 +124,11 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine( Improvement() );
         }
         else {
-            health--;
-            UpdateStats();
-            if (health == 0) {
-                StartCoroutine( EndGame() );
+            Crashable impactObject = collision.gameObject.GetComponent<Crashable>();
+            if (impactObject != null) {
+                ReceiveDamage( impactObject );
             }
+            UpdateStats();
         }
     }
     IEnumerator EndGame() {
@@ -143,5 +138,9 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds( 3 );
 
         UnityEngine.SceneManagement.SceneManager.LoadScene( "Lose" );
+    }
+
+    protected override void DestroySelf() {
+        StartCoroutine( EndGame() );
     }
 }

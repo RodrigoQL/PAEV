@@ -28,10 +28,10 @@ public abstract class Crashable : Moving {
                 damageReturn = TotalHealth / 2;
                 break;
             case CrashableType.Explosive:
-                damageReturn = TotalHealth * 2;
+                damageReturn = TotalHealth * 4;
                 break;
             case CrashableType.Penetrating:
-                damageReturn = TotalHealth;
+                damageReturn = TotalHealth * 2;
                 break;
             case CrashableType.Ship:
                 damageReturn = TotalHealth;

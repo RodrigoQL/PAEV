@@ -202,6 +202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4f77cf6eff750479bacb6245edb648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Velocity: {x: 0, y: 0}
+  Torque: 0
+  CrashableType: 0
+  TotalHealth: 10
+  DamageModifier: 0
+  DamageMultiplier: 1
+  Explosion: {fileID: 1452553829244094, guid: b619550caca45744f9694ec5eec5dc68, type: 2}
   animator: {fileID: 95694208204452864}
   bullet: {fileID: 1002041282431308, guid: 14f2d779f40257a4086ca32314323569, type: 2}
   PowerUp: {fileID: 0}
@@ -211,7 +218,6 @@ MonoBehaviour:
   FireRateText: {fileID: 0}
   SpeedText: {fileID: 0}
   HealthText: {fileID: 0}
-  Explosion: {fileID: 1452553829244094, guid: b619550caca45744f9694ec5eec5dc68, type: 2}
 --- !u!212 &212800838734729614
 SpriteRenderer:
   m_ObjectHideFlags: 1

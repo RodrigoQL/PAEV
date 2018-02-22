@@ -107,12 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22540028b65ac584f8dcfbc3e5bfe86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrashableType: 3
-  TotalHealth: 3
+  Velocity: {x: 0, y: -2}
+  Torque: 0
+  CrashableType: 0
+  TotalHealth: 5
   DamageModifier: 0
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
-  Velocity: {x: 0, y: -2}
   isBoss: 0
 --- !u!212 &212127140964595876
 SpriteRenderer:

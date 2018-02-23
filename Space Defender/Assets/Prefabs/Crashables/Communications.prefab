@@ -196,7 +196,7 @@ MonoBehaviour:
   Velocity: {x: 0, y: -0.5}
   Torque: 5
   CrashableType: 3
-  TotalHealth: 300
+  TotalHealth: 400
   DamageModifier: 0
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}

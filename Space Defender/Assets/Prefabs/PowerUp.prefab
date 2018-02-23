@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: -1}
-  Torque: 2
+  Torque: 15
 --- !u!212 &212841750061858608
 SpriteRenderer:
   m_ObjectHideFlags: 1

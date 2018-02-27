@@ -26,9 +26,11 @@ public class PlayerController : Crashable {
 
     private AudioSource audioSource;
 
+    private bool lose;
+
     protected override void Start() {
         base.Start();
-
+        lose = false;
         audioSource = GetComponent<AudioSource>();
         animator.speed = 2;
         UpdateStats();
@@ -46,13 +48,28 @@ public class PlayerController : Crashable {
         }
         else if (Input.GetKey( KeyCode.RightArrow )) {
             velAux.x += speed * 0.1f;
+        } else {
+            velAux.x = velAux.x / 1.05f;
         }
+
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            velAux.y -= speed * 0.1f;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow)) {
+            velAux.y += speed * 0.1f;
+        }
+        else {
+            velAux.y = velAux.y / 1.05f;
+        }
+
         velAux.x = Mathf.Clamp( velAux.x, -speed, speed );
+        velAux.y = Mathf.Clamp(velAux.y, -speed, speed);
         rBody.velocity = velAux;
 
         Vector3 vec = this.transform.position;
         vec = Camera.main.WorldToViewportPoint( vec );
-        vec.x = Mathf.Clamp( vec.x, 0.1f, 0.9f );
+        vec.x = Mathf.Clamp( vec.x, 0.05f, 0.95f );
+        vec.y = Mathf.Clamp(vec.y, 0.05f, 0.95f);
         this.transform.position = Camera.main.ViewportToWorldPoint( vec );
     }
     private void PowerUpMessage() {
@@ -63,9 +80,11 @@ public class PlayerController : Crashable {
         PowerUp.GetComponent<RectTransform>().anchoredPosition = WorldObject_ScreenPosition;
     }
     void Update() {
-        PowerUpMessage();
-        Movement();
-        Shoot();
+        if (!lose) {
+            PowerUpMessage();
+            Movement();
+            Shoot();
+        }
     }
     void Shoot() {
         shootTimer -= Time.deltaTime * fireRate;
@@ -129,6 +148,7 @@ public class PlayerController : Crashable {
     }
     IEnumerator EndGame() {
         Destroy( Instantiate( Explosion, this.transform.position, Quaternion.identity ), 2 );
+        lose = true;
         this.transform.position = new Vector3( 0, -20 );
 
         yield return new WaitForSeconds( 3 );

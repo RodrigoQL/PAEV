@@ -149,6 +149,7 @@ public class PlayerController : Crashable {
     IEnumerator EndGame() {
         Destroy( Instantiate( Explosion, this.transform.position, Quaternion.identity ), 2 );
         lose = true;
+        
         this.transform.position = new Vector3( 0, -20 );
 
         yield return new WaitForSeconds( 3 );

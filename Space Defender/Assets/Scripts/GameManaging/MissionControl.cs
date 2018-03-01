@@ -14,7 +14,8 @@ public class MissionControl : MonoBehaviour {
         globalValues.UpdateStats();
     }
     public void ImproveStat(string choice) {
-        if(globalValues.Scrap > 100) {
+        int cost = GetCost( choice );
+        if(globalValues.Scrap > cost) {
             audioSource.Play();
             switch (choice) {
                 case "Speed":
@@ -34,6 +35,25 @@ public class MissionControl : MonoBehaviour {
             globalValues.Scrap -= 100;
         }
         globalValues.UpdateStats();
+    }
+    public int GetCost(string choice) {
+        int quantity = 0;
+        int base_value = 100;
+        switch (choice) {
+            case "Speed":
+                quantity = (int)globalValues.Speed - 1;
+                break;
+            case "Cannons":
+                quantity = globalValues.Cannons;
+                break;
+            case "Health":
+                quantity = (globalValues.TotalHealth) / 5;
+                break;
+            case "FireRate":
+                quantity = (int)globalValues.FireRate;
+                break;
+        }
+        return quantity * base_value;
     }
     public void Heal(int health) {
         if (globalValues.Scrap > health * 3) {

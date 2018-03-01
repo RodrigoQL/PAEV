@@ -24,6 +24,6 @@ public class SceneManager : MonoBehaviour {
     public void LoadDifficulty(int difficulty) {
         GameObject.Find( "GlobalValues" ).GetComponent<GlobalValues>().Difficulty = difficulty;
         audioSource.Play();
-        StartCoroutine( WaitLoad( "01_01" ) );
+        StartCoroutine( WaitLoad( "MissionControl" ) );
     }
 }

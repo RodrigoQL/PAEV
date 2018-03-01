@@ -285,6 +285,7 @@
     <Compile Include="Assets\Scripts\CameraScript.cs" />
     <Compile Include="Assets\Scripts\DeathWallScript.cs" />
     <Compile Include="Assets\Scripts\GameManaging\GlobalValues.cs" />
+    <Compile Include="Assets\Scripts\GameManaging\MissionControl.cs" />
     <Compile Include="Assets\Scripts\GameManaging\Spawner.cs" />
     <Compile Include="Assets\Scripts\MovingObjects\AsteroidScript.cs" />
     <Compile Include="Assets\Scripts\MovingObjects\BulletScript.cs" />

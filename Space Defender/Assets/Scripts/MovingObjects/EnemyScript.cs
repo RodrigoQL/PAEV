@@ -18,11 +18,11 @@ public class EnemyScript : Crashable {
     }
 
     protected override void DestroySelf() {
+        GetComponent<Collider2D>().enabled = false; ;
         Vector3 pos = this.transform.position;
         pos.z -= 1;
         GameObject exp = Instantiate( Explosion, pos, Quaternion.identity );
         Destroy( exp, 1 );
-
         if (isBoss) {
             pos += new Vector3( 1, 1, 0 );
             GameObject exp2 = Instantiate( Explosion, pos, Quaternion.identity );
@@ -36,6 +36,7 @@ public class EnemyScript : Crashable {
             StartCoroutine( Win() );
         }
         else {
+            
             GlobalValues val = GameObject.Find("GlobalValues").GetComponent<GlobalValues>();
             val.Scrap += Scrap;
             val.UpdateStats();

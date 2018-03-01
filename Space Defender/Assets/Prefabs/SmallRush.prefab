@@ -1423,6 +1423,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114056607146966022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1442,6 +1443,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114109875534739266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1461,6 +1463,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114313227026212676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1480,6 +1483,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114382028633710198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1499,6 +1503,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114786525760272522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1518,6 +1523,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!114 &114995222016442326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1537,6 +1543,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!212 &212089052578611430
 SpriteRenderer:
   m_ObjectHideFlags: 1

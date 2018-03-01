@@ -52,7 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  FireRate: 1
   Cannons: 1
-  Health: 10
+  FireRate: 1
+  CurrentHealth: 10
+  TotalHealth: 10
+  Scrap: 0
   Level: MainMenu
+  CannonsText: {fileID: 0}
+  FireRateText: {fileID: 0}
+  SpeedText: {fileID: 0}
+  HealthText: {fileID: 0}

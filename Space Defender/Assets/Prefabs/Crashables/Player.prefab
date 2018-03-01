@@ -214,10 +214,7 @@ MonoBehaviour:
   PowerUp: {fileID: 0}
   cam: {fileID: 20391735940766206, guid: 55f25bfe48e3fc6439116b5c24045c04, type: 2}
   CanvasRect: {fileID: 0}
-  CannonsText: {fileID: 0}
-  FireRateText: {fileID: 0}
-  SpeedText: {fileID: 0}
-  HealthText: {fileID: 0}
+  GlobalValues: {fileID: 0}
 --- !u!212 &212800838734729614
 SpriteRenderer:
   m_ObjectHideFlags: 1

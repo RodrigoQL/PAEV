@@ -21,4 +21,9 @@ public class SceneManager : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(levelName);
     }
+    public void LoadDifficulty(int difficulty) {
+        GameObject.Find( "GlobalValues" ).GetComponent<GlobalValues>().Difficulty = difficulty;
+        audioSource.Play();
+        StartCoroutine( WaitLoad( "01_01" ) );
+    }
 }

@@ -15,11 +15,11 @@ public class GlobalValues : MonoBehaviour {
     public int Scrap = 0;
     public string Level = "MainMenu";
 
-    public Text CannonsText;
-    public Text FireRateText;
-    public Text SpeedText;
-    public Text HealthText;
-
+    private Text CannonsText;
+    private Text FireRateText;
+    private Text SpeedText;
+    private Text HealthText;
+    private Text ScrapText;
     private void Awake() {
         if (instance != null) {
             Destroy(gameObject);
@@ -35,6 +35,7 @@ public class GlobalValues : MonoBehaviour {
         SpeedText.text = "Speed:  " + Speed;
         FireRateText.text = "Fire Rate:  " + FireRate;
         HealthText.text = "Health: " + CurrentHealth + " / " + TotalHealth;
+        ScrapText.text = "Scrap: " + Scrap;
     }
 
     public void ForceLoad() {
@@ -42,6 +43,7 @@ public class GlobalValues : MonoBehaviour {
         SpeedText = GameObject.Find("SpeedLbl").GetComponent<Text>();
         HealthText = GameObject.Find("HealthLbl").GetComponent<Text>();
         FireRateText = GameObject.Find("FireRateLbl").GetComponent<Text>();
+        ScrapText = GameObject.Find("ScrapLbl").GetComponent<Text>();
     }
 
 

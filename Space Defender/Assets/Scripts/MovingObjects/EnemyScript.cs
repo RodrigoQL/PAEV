@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class EnemyScript : Crashable {
     
     public bool isBoss;
+    public int Scrap = 5;
     IEnumerator Win() {
         yield return new WaitForSeconds(1);
         this.transform.position = new Vector3(0, 50, 0);
         yield return new WaitForSeconds(2);
+        GlobalValues val = GameObject.Find("GlobalValues").GetComponent<GlobalValues>();
+        val.Scrap += Scrap;
+        val.UpdateStats();
         UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
     }
 
@@ -32,6 +36,9 @@ public class EnemyScript : Crashable {
             StartCoroutine( Win() );
         }
         else {
+            GlobalValues val = GameObject.Find("GlobalValues").GetComponent<GlobalValues>();
+            val.Scrap += Scrap;
+            val.UpdateStats();
             Destroy( gameObject, 0.1f );
         }
     }

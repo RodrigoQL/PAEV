@@ -19,25 +19,38 @@ public class PlayerController : Crashable {
     private float speed = 2;
     private float fireRate = 1;
     private int cannons = 1;
-    public Text CannonsText;
-    public Text FireRateText;
-    public Text SpeedText;
-    public Text HealthText;
+    
 
     private AudioSource audioSource;
 
+    private bool lose;
+
+    private GlobalValues globalValues;
+
     protected override void Start() {
         base.Start();
-
+        lose = false;
         audioSource = GetComponent<AudioSource>();
         animator.speed = 2;
+        setStats();
         UpdateStats();
     }
+    private void setStats() {
+        globalValues = GameObject.Find("GlobalValues").GetComponent<GlobalValues>();
+        globalValues.ForceLoad();
+        speed = globalValues.Speed;
+        cannons = globalValues.Cannons;
+        fireRate = globalValues.FireRate;
+        currentHealth = globalValues.CurrentHealth;
+        TotalHealth = globalValues.TotalHealth;
+    }
     private void UpdateStats() {
-        CannonsText.text = "Cannons:  " + cannons;
-        SpeedText.text = "Speed:  " + speed;
-        FireRateText.text = "Fire Rate:  " + fireRate;
-        HealthText.text = "Health: " + currentHealth;
+        globalValues.Speed = speed;
+        globalValues.FireRate = fireRate;
+        globalValues.Cannons = cannons;
+        globalValues.TotalHealth = TotalHealth;
+        globalValues.CurrentHealth = currentHealth;
+        globalValues.UpdateStats();
     }
     private void Movement() {
         velAux = rBody.velocity;
@@ -46,13 +59,28 @@ public class PlayerController : Crashable {
         }
         else if (Input.GetKey( KeyCode.RightArrow )) {
             velAux.x += speed * 0.1f;
+        } else {
+            velAux.x = velAux.x / 1.05f;
         }
+
+        if (Input.GetKey(KeyCode.DownArrow)) {
+            velAux.y -= speed * 0.1f;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow)) {
+            velAux.y += speed * 0.1f;
+        }
+        else {
+            velAux.y = velAux.y / 1.05f;
+        }
+
         velAux.x = Mathf.Clamp( velAux.x, -speed, speed );
+        velAux.y = Mathf.Clamp(velAux.y, -speed, speed);
         rBody.velocity = velAux;
 
         Vector3 vec = this.transform.position;
         vec = Camera.main.WorldToViewportPoint( vec );
-        vec.x = Mathf.Clamp( vec.x, 0.1f, 0.9f );
+        vec.x = Mathf.Clamp( vec.x, 0.05f, 0.95f );
+        vec.y = Mathf.Clamp(vec.y, 0.05f, 0.95f);
         this.transform.position = Camera.main.ViewportToWorldPoint( vec );
     }
     private void PowerUpMessage() {
@@ -63,9 +91,11 @@ public class PlayerController : Crashable {
         PowerUp.GetComponent<RectTransform>().anchoredPosition = WorldObject_ScreenPosition;
     }
     void Update() {
-        PowerUpMessage();
-        Movement();
-        Shoot();
+        if (!lose) {
+            PowerUpMessage();
+            Movement();
+            Shoot();
+        }
     }
     void Shoot() {
         shootTimer -= Time.deltaTime * fireRate;
@@ -129,10 +159,17 @@ public class PlayerController : Crashable {
     }
     IEnumerator EndGame() {
         Destroy( Instantiate( Explosion, this.transform.position, Quaternion.identity ), 2 );
+        lose = true;
+        
         this.transform.position = new Vector3( 0, -20 );
 
         yield return new WaitForSeconds( 3 );
 
+        globalValues.Speed = 2;
+        globalValues.Cannons = 1;
+        globalValues.CurrentHealth = 10;
+        globalValues.TotalHealth = 10;
+        globalValues.FireRate = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene( "Lose" );
     }
 

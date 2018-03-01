@@ -224,6 +224,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 3
 --- !u!212 &212001737891569318
 SpriteRenderer:
   m_ObjectHideFlags: 1

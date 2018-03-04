@@ -1,21 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MissionControl : MonoBehaviour {
 
     private GlobalValues globalValues;
     private AudioSource audioSource;
 
+    public Text CannonsCost;
+    public Text SpeedCost;
+    public Text FireRateCost;
+    public Text HealthCost;
+
     private void Start() {
         globalValues = GameObject.Find( "GlobalValues" ).GetComponent<GlobalValues>();
         audioSource = GetComponent<AudioSource>();
         globalValues.ForceLoad();
+        UpdateStats();
+    }
+    public void UpdateStats() {
         globalValues.UpdateStats();
+        CannonsCost.text = "&" + GetCost( "Cannons" ).ToString();
+        SpeedCost.text = "&" + GetCost( "Speed" ).ToString();
+        HealthCost.text = "&" + GetCost( "Health" ).ToString();
+        FireRateCost.text = "&" + GetCost( "FireRate" ).ToString();
     }
     public void ImproveStat(string choice) {
         int cost = GetCost( choice );
-        if(globalValues.Scrap > cost) {
+        if(globalValues.Scrap >= cost) {
             audioSource.Play();
             switch (choice) {
                 case "Speed":
@@ -32,9 +45,9 @@ public class MissionControl : MonoBehaviour {
                     globalValues.FireRate += 1;
                     break;
             }
-            globalValues.Scrap -= 100;
+            globalValues.Scrap -= cost;
         }
-        globalValues.UpdateStats();
+        UpdateStats();
     }
     public int GetCost(string choice) {
         int quantity = 0;
@@ -59,12 +72,12 @@ public class MissionControl : MonoBehaviour {
         if (globalValues.Scrap > health * 3) {
             audioSource.Play();
             globalValues.CurrentHealth = Mathf.Clamp( globalValues.CurrentHealth + health, 0, globalValues.TotalHealth );
-            globalValues.UpdateStats();
+            UpdateStats();
             globalValues.Scrap -= ( health * 3 );
         }
     }
     public void StartMission(string mission) {
-        StartCoroutine( WaitLoad( "01_01" ) );
+        StartCoroutine( WaitLoad( mission ) );
     }
     IEnumerator WaitLoad(string levelName) {
         yield return new WaitForSeconds( 0.2f );

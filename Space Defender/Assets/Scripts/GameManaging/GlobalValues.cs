@@ -13,7 +13,8 @@ public class GlobalValues : MonoBehaviour {
     public int CurrentHealth = 10;
     public int TotalHealth = 10;
     public int Scrap = 0;
-    public string Level = "MainMenu";
+    public int Difficulty = 1;
+    public string Level = "01-01";
 
     private Text CannonsText;
     private Text FireRateText;

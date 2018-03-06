@@ -115,6 +115,7 @@ MonoBehaviour:
   DamageMultiplier: 1
   Explosion: {fileID: 1101584646494816, guid: 87ad1d6820a97bf4ca0964f6e44853f5, type: 2}
   isBoss: 0
+  Scrap: 5
 --- !u!212 &212127140964595876
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -146,8 +147,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 32748297
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3158fdaa0ecf92f4288d91e776d941a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

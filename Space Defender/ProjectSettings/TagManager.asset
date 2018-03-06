@@ -45,3 +45,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bosses
+    uniqueID: 1347191103
+    locked: 0
+  - name: Enemies
+    uniqueID: 32748297
+    locked: 0
+  - name: Player
+    uniqueID: 917009461
+    locked: 0
+  - name: Hazards
+    uniqueID: 3458850771
+    locked: 0
+  - name: PowerUps
+    uniqueID: 1504501099
+    locked: 0

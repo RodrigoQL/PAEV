@@ -214,7 +214,6 @@ MonoBehaviour:
   PowerUp: {fileID: 0}
   cam: {fileID: 20391735940766206, guid: 55f25bfe48e3fc6439116b5c24045c04, type: 2}
   CanvasRect: {fileID: 0}
-  GlobalValues: {fileID: 0}
 --- !u!212 &212800838734729614
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -246,8 +245,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 917009461
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f348f1500043bb54c91c9f75e2a59c63, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour {
     public GameObject BigAsteroid;
     public GameObject SmallRush;
     public GameObject Boss;
+    public GameObject Kamikaze;
 
     private int difficulty;
 
@@ -27,7 +28,7 @@ public class Spawner : MonoBehaviour {
 
         InvokeRepeating("SpawnVVV2", 125, 7 - difficulty);
         InvokeRepeating("SpawnRush2", 155 - (difficulty * 10), 10 - (difficulty * 2));
-        InvokeRepeating("SpawnAsteroid2", 104, 10 - difficulty);
+        InvokeRepeating("SpawnKamikaze", 104, 13 - difficulty);
         InvokeRepeating("SpawnBoss", 190, 0);
     }
 
@@ -66,6 +67,10 @@ public class Spawner : MonoBehaviour {
     void SpawnRush2() {
         Vector3 pos = new Vector3(Random.Range(-5f, 5f), 10, 1);
         Destroy(Instantiate(SmallRush, pos, Quaternion.identity), 20);
+    }
+    void SpawnKamikaze() {
+        Vector3 pos = new Vector3(10, 9, 1);
+        Destroy(Instantiate(Kamikaze, pos, Quaternion.identity), 20);
     }
     void SpawnAsteroid() {
         float r = Random.Range(0f, 1f);

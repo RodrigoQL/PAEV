@@ -62,4 +62,4 @@ MonoBehaviour:
     type: 2}
   SmallRush: {fileID: 1119912345798730, guid: e9e7c10ff807f0441b48459ec6393d0d, type: 2}
   Boss: {fileID: 1123125631756046, guid: 9699e86bb7f155d46b28462911ec352a, type: 2}
-  difficulty: 1
+  Kamikaze: {fileID: 1172025779905932, guid: ef644af437f76a84eb90c3a6588daac2, type: 2}

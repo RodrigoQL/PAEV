@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: e2d6da5042f50ca4fb4508cf03fe8b6b
+timeCreated: 1523415552
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Future
+  fontNames:
+  - Future
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9b3a0e3fb6abb2b4f94bbfd1c1e2aa63, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

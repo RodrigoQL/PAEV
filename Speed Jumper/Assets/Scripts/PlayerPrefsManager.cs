@@ -23,7 +23,7 @@ public class PlayerPrefsManager : MonoBehaviour {
     }
     public static void SetDifficulty(int difficulty) {
         if (difficulty >= 1 && difficulty <= 5) {
-            PlayerPrefs.SetInt(MASTER_VOLUME_KEY, difficulty);
+            PlayerPrefs.SetInt(DIFFICULTY_KEY, difficulty);
         }
         else {
             Debug.LogError("Difficulty out of range");

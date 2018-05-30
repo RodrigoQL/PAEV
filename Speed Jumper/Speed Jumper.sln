@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Speed Jumper", "Speed Jumper.csproj", "{F6EB1403-C130-B3E9-F4CC-9ABE6A8467FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Speed Jumper.Editor", "Speed Jumper.Editor.csproj", "{341713A7-5E71-7335-C65F-D561CC32E1FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{F6EB1403-C130-B3E9-F4CC-9ABE6A8467FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6EB1403-C130-B3E9-F4CC-9ABE6A8467FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6EB1403-C130-B3E9-F4CC-9ABE6A8467FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{341713A7-5E71-7335-C65F-D561CC32E1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341713A7-5E71-7335-C65F-D561CC32E1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341713A7-5E71-7335-C65F-D561CC32E1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341713A7-5E71-7335-C65F-D561CC32E1FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

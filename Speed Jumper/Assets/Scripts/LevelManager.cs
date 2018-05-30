@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour {
     public Text txt;
     private int alpha;
     void Start() {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         alpha = 255;
         InvokeRepeating("LoadNextLevel", autoLoadNextLevelAfter,.005f);
     }

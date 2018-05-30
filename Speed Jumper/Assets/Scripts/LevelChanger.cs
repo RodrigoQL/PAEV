@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour {
-
+    
     public void LoadLevel(string name) {
         Debug.Log("New Level load: " + name);
         SceneManager.LoadScene(name);
